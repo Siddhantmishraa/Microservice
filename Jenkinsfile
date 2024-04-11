@@ -1,4 +1,4 @@
-pipeline { 
+pipeline {
     agent any
 
     stages {
@@ -8,7 +8,6 @@ pipeline {
                     withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
                         sh "docker build -t lastgod/recommendationservice:latest ."
                     }
-                        }
                 }
             }
         }
@@ -17,10 +16,10 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker push lastgod/recommendationcartservice:latest "
+                        sh "docker push lastgod/recommendationservice:latest "
                     }
                 }
             }
         }
     }
-
+}
