@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker build -t lastgod/cartservice:latest ."
+                        sh "docker build -t lastgod/recommendationservice:latest ."
                     }
                         }
                 }
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker push lastgod/cartservice:latest "
+                        sh "docker push lastgod/recommendationcartservice:latest "
                     }
                 }
             }
